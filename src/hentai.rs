@@ -55,7 +55,7 @@ impl Hentai
     /// - created hentai or error
     pub async fn new(id: u32, db: &sqlx::sqlite::SqlitePool, http_client: &wreq::Client, nhentai_hentai_search_url: &str, filename_title_type: &TitleType, library_path: &str, library_split: u32) -> Result<Self, HentaiNewError>
     {
-        const FILENAME_SIZE_MAX: u16 = 255; // maximum filename size [B]
+        const FILENAME_SIZE_MAX: u16 = 240; // maximum filename size [B]
         const TITLE_CHARACTERS_FORBIDDEN: &str = "\\/:*?\"<>|\t\n"; // forbidden characters in Windows file names
         let mut cbz_filename: String;
         let hentai_table_row: HentaiTableRow;
